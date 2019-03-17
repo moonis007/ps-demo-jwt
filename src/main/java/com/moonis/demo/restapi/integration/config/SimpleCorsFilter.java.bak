@@ -37,7 +37,8 @@ public class SimpleCorsFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse)arg1;
 		String ogn=req.getHeader("origin");
 		if (ogn != null) {
-			if (req.getHeader("origin").equalsIgnoreCase("http://localhost:4200")) {
+			if (req.getHeader("origin").equalsIgnoreCase("http://localhost:4200")
+					|| req.getHeader("origin").equalsIgnoreCase("https://skils.io")) {
 				res.addHeader("Access-Control-Allow-Origin", req.getHeader("origin"));
 			}
 		} else {
